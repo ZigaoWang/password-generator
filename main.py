@@ -1,11 +1,11 @@
-import random
+import secrets
 import string
 import tkinter as tk
 from tkinter import ttk
 
 def generate_password(length):
     characters = string.ascii_letters + string.digits + string.punctuation
-    password = ''.join(random.choice(characters) for _ in range(length))
+    password = ''.join(secrets.choice(characters) for _ in range(length))
     return password
 
 def generate_and_display_password():
@@ -38,7 +38,6 @@ main_frame.columnconfigure(0, weight=1)
 main_frame.rowconfigure(0, weight=1)
 
 length_label = ttk.Label(main_frame, text="Enter Length:")
-length_label = ttk.Label(main_frame, text="Enter the length of the password:")
 length_label.grid(column=0, row=0, sticky=(tk.W, tk.E), pady=(0, 5))
 
 length_entry = ttk.Entry(main_frame)
